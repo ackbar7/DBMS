@@ -1,0 +1,69 @@
+Klausa where dengan operator perbandingan
+
+Select * from transaksi00s3 where novinal »-200000;
+
+select t.no_rekening, n.nama_nosabah, t.nominal 
+from transaksi00S3 s t, nasabandds3 as n 
+where t.no_rekening=n.no_rekening and t.nominal<200000;
+
+Select * from transaksi0053 
+WHERE no_rekening !="03-112"
+
+select t.no_rekening, n.nama_nasabah, t.kode_jenis, j.jenis_transaksi, t.nominal 
+from transaksi0053 as t, nasabah0053 as n, jenis_transaksi00533 as j 
+wheret.no_rekening=n.no_rekening and t.kode_jenis=j.kode_jenis and t.nominal-200000;
+
+select no_rekening, sum(nominal) as total nominal 
+from transaksi@@53 GROUP by no_rekening HAVING sum(nominal) <= 1080000;
+
+
+Klausa where dengan operator logikal
+
+select * from transaks10053 where kode_jenis="1" OR nominal="50000";
+
+select * from transaks10853 where kode_jenis="1" AND nominal-"58009";
+
+select * from transaks10053 where NOT kode_jenis="1";
+
+
+Operator like
+
+select * from nasabah00s3 where nama_nasabah like "P%";
+
+Select * from nasaban0ds3 where nana_nasabah like "%i";
+
+Select * from nasaban0ds3 where nana_nasabah Like "%n%";
+
+select * from nasabah0as3 where nama_nasabah like "%i" or nama_nasabeh like "p%"
+
+
+Operator between  
+
+Select * from transaksi00s3 where nominal between 50000 and 2000000
+
+select * from transaksi0e53 where nominal between 50000 and 200000 and not no_rekening-"03-116";
+
+select t.no_rekening, n.nana_nasabah,t.tgl, t.nominal 
+from transaksi0S3 as t, nasabahdds3 as n 
+where t.no_rekening=n.no_rekening HAVING nominal BETWEEN 50000 and 250000
+
+Select t.no_rekening, n.nama_nasabah, t.tgl, t.roninal 
+From transaks106S3 as t , nasDANGES3 as n  
+where t.no_rekeningen=n.no_rekening and t.nominal BETWEEN 50360 and 250000
+
+select t.no_rekening, n.nama_nasabah, sum(t.nominal) as total nominal 
+from transaksi@@53 as t, nasabsh@@53 as n 
+where t.no_rekening=n.no_rekening GROUP by t.no_rekening
+
+
+Operator limit
+
+Select * from transaksioes3 Limit 2;
+
+select * from transaksi0es3 ORDER by no_rekening asc Limit 2;
+
+select n.no_rekening, sun(t.nominal) as total nominal 
+from transaksides3 as t, nasabandds3 as n WHERE n.no_rekening=t.no_rekening 
+GROUP by no_rekening 
+having Sum(t.nominal) BETWEEN 500090 and 1509009 
+order by sum(t.nominal) desc Limit 2;
